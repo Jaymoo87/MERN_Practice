@@ -1,9 +1,10 @@
 import express from "express";
+import { getStudents, createStudent } from "../controllers/student-controller.js";
+import student from "../models/student-model.js";
 
 const studentRouter = express.Router();
 
-studentRouter.get("/", async (req, res) => {
-  res.send("router is working");
-});
+studentRouter.get("/", getStudents);
+studentRouter.post("/", createStudent);
 
 export default studentRouter;
